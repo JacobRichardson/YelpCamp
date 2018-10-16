@@ -1,0 +1,27 @@
+.thumbnail img{
+    width: 100%;
+}
+.thumbnail {
+    padding: 0;
+}
+.thumbnail .caption-full{
+    padding: 9px;
+}
+.delete-form{
+    display: inline;
+}
+ hr {
+       margin-bottom: 40px;
+       border-top: 1px solid #aaaaaa;
+       border-bottom: 1px solid #ffffff;
+}
+#map {
+    height: 400px;
+    width: 100%;
+}
+#campgroundDescription{
+    padding-top: 3%;
+}
+#submitedBy{
+    padding-top: 1%;
+}

@@ -1,0 +1,39 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-sm-4">
+            <h1><%=user.firstName + " " + user.lastName%></h1>
+            <div class="thumbnail">
+                <img class="img-responsive" src="<%=user.avatar%>" alt="User profile image">
+                <div class="caption-full">
+                    <a href="mailto:<%=user.email%>"><%= user.email%></a>
+                </div>
+            </div>
+             <% if(currentUser && (user.id == currentUser._id) || currentUser && currentUser.isAdmin) { %>
+                <div class="container">
+                     <a class= "btn btn-warning" href="/users/<%=user.id%>/edit">Edit</a>
+                </div>
+             <% } %>    
+        </div>
+        <div class="col-md-8 text-center">
+            <h3><%= user.username %>'s campgrounds:</h3>
+            <ul style="list-style:none">
+                <% campgrounds.forEach(function(campground){ %>
+                    <li><strong><a href="/campgrounds/<%=campground.id%>"><%=campground.name %></a></strong></li>
+                <% })%>
+            </ul>
+            <h3><%= user.username %>'s comments:</h3>
+            <ul style="list-style:none">
+                <% comments.forEach(function(comment){ %>
+                    <li>
+                        <p style="text-align:left"><%=comment.text %></p>
+                    <li>
+                <% })%>
+            </ul>
+            
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>
